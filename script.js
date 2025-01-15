@@ -81,6 +81,7 @@ function addFiveMinutes() {
         updateDisplay(timeLeft);
         if (timerId !== null) {
             clearInterval(timerId);
+            timerId = null;
             startTimer();
         }
     }
@@ -92,6 +93,7 @@ function doubleTime() {
         updateDisplay(timeLeft);
         if (timerId !== null) {
             clearInterval(timerId);
+            timerId = null;
             startTimer();
         }
     }
