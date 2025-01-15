@@ -8,6 +8,13 @@
 </head>
 <body>
     <div class="container">
+        <div class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <label for="mode-toggle">
+                <span class="toggle-label work">Work</span>
+                <span class="toggle-label break">Break</span>
+            </label>
+        </div>
         <h1>Pomodoro Timer</h1>
         <div class="timer">
             <span id="minutes">25</span>:<span id="seconds">00</span>
@@ -15,10 +22,13 @@
         <div class="controls">
             <button id="start">Start</button>
             <button id="reset">Reset</button>
-            <button id="toggle-mode">Break</button>
-        </div>
-        <div class="mode">
-            <span id="mode-text">Work Time</span>
+            <div class="dropdown">
+                <button id="time-modify">More Time ▾</button>
+                <div class="dropdown-content">
+                    <a href="#" id="add-five">+ 5 Minutes</a>
+                    <a href="#" id="double-time">Double Time</a>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
