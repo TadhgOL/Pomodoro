@@ -61,18 +61,33 @@ function startTimer() {
 }
 
 function resetTimer() {
+    // Stop the timer
     clearInterval(timerId);
     timerId = null;
+    
+    // Reset to work mode
     isWorkTime = true;
+    modeToggle.checked = false;
+    
+    // Reset the time to initial work time
     timeLeft = WORK_TIME;
-    modeText.textContent = 'Work Time';
-    updateDisplay(timeLeft);
+    
+    // Update display
+    const minutes = Math.floor(WORK_TIME / 60);
+    const seconds = WORK_TIME % 60;
+    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+    
+    // Reset UI elements
     startButton.textContent = 'Start';
-
+    modeText.textContent = 'Work Time';
+    
+    // Remove running class
     const timerDisplay = document.querySelector('.timer');
     timerDisplay.classList.remove('running');
-
-    modeToggle.checked = false;
+    
+    // Reset document title
+    document.title = 'Pomodoro Timer';
 }
 
 function addFiveMinutes() {
